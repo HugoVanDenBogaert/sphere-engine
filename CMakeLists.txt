@@ -10,7 +10,7 @@ FetchContent_Declare(SFML
     GIT_TAG 2.6.x)
 FetchContent_MakeAvailable(SFML)
 
-add_executable(Sphere-Engine src/main.cpp)
+add_executable(Sphere-Engine src/main.cpp src/Geometry.hpp src/geom-Sphere.cpp src/Camera.hpp src/Camera.cpp)
 target_link_libraries(Sphere-Engine PRIVATE sfml-graphics)
 target_compile_features(Sphere-Engine PRIVATE cxx_std_17)
 
