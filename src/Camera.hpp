@@ -1,7 +1,7 @@
 #pragma once
 #include "Geometry.hpp"
 #include <cmath>
-//class Scene;
+#include "Scene.hpp"
 class Camera {
 public:
     geom::Vec3f pos = {-2.0f, 0.0f, 0.0f};
@@ -9,9 +9,9 @@ public:
     geom::Vec3f up = {0.0f, 0.0f, 1.0f};
     float dist = 1.0f;
     float fovW = M_PI_2;
-    float fovH = M_PI / 2;
     unsigned int width = 1920;
     unsigned int height = 1080;
+    float fovH = fovW * height / width;
     unsigned char* pixBuffer;
     char* zBuffer;
     geom::Sphere scene;

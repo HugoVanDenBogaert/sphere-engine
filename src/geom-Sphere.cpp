@@ -3,8 +3,8 @@
 unsigned int geom::Sphere::intersect(const Ray ray, Vec3f &point1, Vec3f &point2) const
 {
     // if dir is a unit vector, then a = 1
-    float b = ray.dir * (pos - ray.pos);
-    float c = (ray.pos * ray.pos) + (pos * pos) - (ray.pos * pos) - (radius * radius);
+    float b = ray.dir * (ray.pos - pos) * 2;
+    float c = (ray.pos - pos)*(ray.pos - pos) - (radius * radius);
     float delta = b * b - 4 * c;
     float s;
     // no intersection

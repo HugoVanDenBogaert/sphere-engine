@@ -63,5 +63,7 @@ namespace geom
         float radius = 1.0f;
         Vec3f pos = {0.0f, 0.0f, 0.0f};
         unsigned int intersect(const Ray ray, Vec3f &point1, Vec3f &point2) const;
+        Sphere(const float r, const Vec3f pos) {radius = r; this->pos = pos;};
+        Sphere() {radius = 1; pos = {.0f, .0f, .0f};};
     };
 }

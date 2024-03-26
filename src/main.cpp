@@ -10,7 +10,8 @@ int main()
     Camera camera;
     camera.width = 1000;
     camera.height = 1000;
-    camera.scene.pos = {-0.0f, 0.5f, 0.0f};
+    camera.fovH = camera.fovW * camera.height / camera.width;
+    camera.scene.pos = {2.0f, 0.5f, 0.0f};
     camera.scene.radius = 1.0f;
     camera.pixBuffer = new unsigned char[4 * camera.width * camera.height];
     camera.processImage();
@@ -40,7 +41,7 @@ int main()
         window.clear();
         window.draw(sprite);
         window.display();
-        camera.scene.pos.x += .001;
+        camera.scene.pos.y -= .005;
         texture.update((sf::Uint8*)camera.pixBuffer);
         camera.processImage();
     }
